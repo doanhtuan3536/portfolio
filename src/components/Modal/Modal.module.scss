@@ -1,0 +1,33 @@
+.Modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 3;
+    animation: var(--animate) 0.4s ease;
+}
+
+.Modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(49, 49, 49, 0.4);
+}
+
+.Modal-content {
+    margin: auto;
+    position: relative;
+    z-index: 4;
+    width: 85%;
+    height: 85%;
+    background-color: white;
+}
+
+.Modal-close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
