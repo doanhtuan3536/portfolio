@@ -5,6 +5,9 @@
     // align-items: center;
     justify-content: center;
     padding: 25px;
+    overflow-y: auto;
+    border-radius: 20px;
+    background-color: rgb(231, 227, 227);
 }
 
 .Modal-project-video {
@@ -27,11 +30,12 @@
     .Modal-project-time,
     .Modal-project-tools {
         font-size: 2rem;
+        font-weight: 500;
     }
     .Modal-project-intro {
         font-size: 1.75rem;
         line-height: 1.5;
-        font-weight: 500px;
+        font-weight: 500;
     }
     .Modal-project-time {
         display: flex;
@@ -41,6 +45,7 @@
     .Modal-project-btn {
         display: flex;
         gap: 20px;
+        padding-bottom: 20px;
     }
     .Modal-project-subheader {
         font-weight: 700;

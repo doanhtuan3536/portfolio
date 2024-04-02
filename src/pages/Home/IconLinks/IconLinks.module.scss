@@ -1,0 +1,33 @@
+@import '../../../components/GlobalStyles/GlobalStyles.scss';
+.Icon-links {
+    display: flex;
+    // flex-direction: column;
+    // bottom: ;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translate(-50%, -50%);
+    // animation: slidein 1s forwards;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    // transition: all 0.75s;
+    // opacity: 1;
+}
+
+.open-Icon-links {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    animation: slidein 0.5s forwards;
+    background-color: transparent;
+}
+.Icon-link {
+    // background-color: transparent;
+    font-size: 3.5rem;
+    &:hover {
+        transform: scale(1.5);
+    }
+}

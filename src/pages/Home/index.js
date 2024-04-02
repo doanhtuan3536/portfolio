@@ -2,19 +2,22 @@ import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import Image from '~/components/Image';
 import Button from '~/components/Button';
-import styles from './Home.module.scss';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect, useRef } from 'react';
 import HomeSection from './HomeSection';
-// import Modal from '~/components/Modal/Modal';
+
 import { useModal } from '~/hooks';
 import ModalProject from './ModalProject';
 import ProjectSection from './ProjectSection';
 import SkillsSection from './SkillsSection';
-// import videotest from '~/assets/video/test.webm';
+
 import videos from '~/assets/video';
+import styles from './Home.module.scss';
+import IconLinks from './IconLinks';
+import config from '~/config';
 const cx = classNames.bind(styles);
 
 const projects = [
@@ -44,70 +47,16 @@ const projects = [
     },
 ];
 
-const SocialMedia = [
-    {
-        icon: faFacebook,
-        link: 'https://www.facebook.com/profile.php?id=100013905698650',
-    },
-    {
-        icon: faInstagram,
-        link: 'https://www.facebook.com/profile.php?id=100013905698650',
-    },
-    {
-        icon: faGithub,
-        link: 'https://github.com/doanhtuan3536',
-    },
-];
-
 function Home() {
-    const [IconLink, setIconLink] = useState(true);
-    const [toggleModal, setToggleModal] = useModal();
-    let IconLinks = useRef();
-    let indexProject = useRef();
-    function IconLinksDisappear() {
-        if (!IconLink) {
-            // console.log(IconLinks);
-            IconLinks.current.style.display = 'none';
-        }
+    const [toggleModal, setToggleModal] = useState(false);
+    const [currentIndexProj, setCurrentIndexProj] = useState(null);
+    function handleToggleModal(index) {
+        setCurrentIndexProj(index);
+        setToggleModal(!toggleModal);
     }
-    function ToggleModal(index) {
-        indexProject.current = index;
-        setToggleModal();
-    }
-    useEffect(() => {
-        if (toggleModal) {
-            document.body.style.overflowY = 'hidden';
-        } else {
-            document.body.style.overflowY = 'visible';
-        }
-    }, [toggleModal]);
     return (
         <div className={cx('wrapper')}>
-            <div
-                ref={IconLinks}
-                className={cx('Icon-links')}
-                style={{
-                    animation: `${IconLink ? cx('slidein') : cx('slideout')} 0.5s forwards`,
-                    display: `${IconLink ? 'flex' : ''}`,
-                }}
-                onAnimationEnd={IconLinksDisappear}
-            >
-                {SocialMedia.map((item, index) => {
-                    return (
-                        <Button key={index} href={item.link} LinkIcon className={cx('slider-link')} target={'_blank'}>
-                            <FontAwesomeIcon icon={item.icon} />
-                        </Button>
-                    );
-                })}
-                <Button LinkIcon large className={cx('close-Icon-links')} onClick={() => setIconLink(false)}>
-                    <FontAwesomeIcon icon={faCaretLeft} />
-                </Button>
-            </div>
-            {!IconLink && (
-                <Button LinkIcon large className={cx('open-Icon-links')} onClick={() => setIconLink(true)}>
-                    <FontAwesomeIcon icon={faCaretRight} />
-                </Button>
-            )}
+            <IconLinks />
             <div className="grid">
                 <div className={cx('slider')}>
                     <div className={cx('slider__content')}>
@@ -134,23 +83,21 @@ function Home() {
                             <div className={cx('slider-images')}>
                                 <Image src={images.myImages[1]} className={cx('slider-image')} />
                             </div>
-                            <Button outline large className={cx('slider-btn-about')}>
+                            <Button to={`${config.routes.about}`} outline large className={cx('slider-btn-about')}>
                                 About me
                             </Button>
                         </div>
                     </div>
                 </div>
-                <ProjectSection Allprojects={projects} ShowProjectDetails={ToggleModal}></ProjectSection>
-                <SkillsSection></SkillsSection>
-                <div style={{ height: 2000 }}></div>
+                <ProjectSection Allprojects={projects} ShowProjectDetails={handleToggleModal} />
+                <SkillsSection />
             </div>
-            {toggleModal && (
-                <ModalProject
-                    data={projects[indexProject.current]}
-                    index={indexProject.current}
-                    hideModal={setToggleModal}
-                />
-            )}
+            <ModalProject
+                data={currentIndexProj != null ? projects[currentIndexProj] : null}
+                index={currentIndexProj}
+                hideModal={() => setToggleModal(!toggleModal)}
+                showModal={toggleModal}
+            />
         </div>
     );
 }

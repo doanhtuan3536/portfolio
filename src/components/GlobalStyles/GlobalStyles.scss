@@ -73,6 +73,38 @@ ul {
     }
 }
 
+@keyframes fadeout {
+    0% {
+        // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+    100% {
+        // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        opacity: 0;
+    }
+}
+
 button {
     border: none;
+}
+
+@keyframes slidein {
+    0% {
+        // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translate(-100%, -50%);
+    }
+    100% {
+        // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes slideout {
+    0% {
+        // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translate(calc(-100% - 40px), -50%);
+    }
 }

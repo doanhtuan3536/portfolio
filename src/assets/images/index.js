@@ -9,6 +9,12 @@ const images = {
     // projectImage: [
     //     {}
     // ]
+    SkillsImage: {
+        react: require('~/assets/images/react.png'),
+        nodejs: require('~/assets/images/nodejs.png'),
+        github: require('~/assets/images/github.png'),
+        'C++': require('~/assets/images/Cplus.png'),
+    },
 };
 
 export default images;
