@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
-import styles from './Header.module.scss';
+import { useSpring, animated } from 'react-spring';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import config from '~/config';
 import images from '~/assets/images';
@@ -8,8 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 import Menu from '~/components/Popper/Menu';
 import Switch from '~/components/Switch';
+import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
-
 const language = [
     {
         title: 'VietNamese',

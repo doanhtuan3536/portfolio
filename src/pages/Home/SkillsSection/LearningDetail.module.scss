@@ -1,0 +1,29 @@
+.wrapper {
+    padding: 25px;
+}
+.LearningDetail-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .LearningDetail-detail-subHeader {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .LearningDetail-detail__item {
+        font-size: 1.6rem;
+    }
+    .LearningDetail-detail-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+.LearningDetail-header {
+    font-size: 2.7rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.LearningDetail-link {
+    color: blue;
+}

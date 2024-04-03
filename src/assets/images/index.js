@@ -14,6 +14,10 @@ const images = {
         nodejs: require('~/assets/images/nodejs.png'),
         github: require('~/assets/images/github.png'),
         'C++': require('~/assets/images/Cplus.png'),
+        javascript: require('~/assets/images/javascript.png'),
+        redux: require('~/assets/images/redux.png'),
+        git: require('~/assets/images/git.png'),
+        ReactQuery: require('~/assets/images/ReactQuery.png'),
     },
 };
 

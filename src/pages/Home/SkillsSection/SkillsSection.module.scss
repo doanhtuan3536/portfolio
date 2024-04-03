@@ -1,17 +1,27 @@
 .wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    gap: 40px;
+    .list-skill-types {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
 }
 .skill-type {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
     .skill-type__header {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
+        font-weight: 600;
     }
     .skill-type__list-skills {
         display: flex;
         gap: 20px;
+        flex-wrap: wrap;
     }
 }
