@@ -37,17 +37,33 @@ function IconLinks() {
                 >
                     {SocialMedia.map((item, index) => {
                         return (
-                            <Button key={index} href={item.link} LinkIcon className={cx('Icon-link')} target={'_blank'}>
+                            <Button
+                                key={index}
+                                href={item.link}
+                                LinkIcon
+                                className={cx('Icon-link', 'BackGround-Link')}
+                                target={'_blank'}
+                            >
                                 <FontAwesomeIcon icon={item.icon} />
                             </Button>
                         );
                     })}
-                    <Button LinkIcon large className={cx('close-Icon-links')} onClick={() => setAppear(false)}>
+                    <Button
+                        LinkIcon
+                        large
+                        className={cx('close-Icon-links', 'BackGround-Link')}
+                        onClick={() => setAppear(false)}
+                    >
                         <FontAwesomeIcon icon={faCaretLeft} />
                     </Button>
                 </div>
             ) : (
-                <Button LinkIcon large className={cx('open-Icon-links')} onClick={() => setAppear(true)}>
+                <Button
+                    LinkIcon
+                    large
+                    className={cx('open-Icon-links', 'BackGround-Link ')}
+                    onClick={() => setAppear(true)}
+                >
                     <FontAwesomeIcon icon={faCaretRight} />
                 </Button>
             )}

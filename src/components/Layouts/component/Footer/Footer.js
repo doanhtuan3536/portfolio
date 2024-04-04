@@ -40,18 +40,33 @@ function Footer() {
                             <main className={cx('Contact__main-content', 'main-content__content')}>
                                 <ul className={cx('Contact__main-content__list-Links')}>
                                     <li className={cx('Contact__main-content__link')}>
-                                        <FontAwesomeIcon icon={faEnvelope} />
+                                        <FontAwesomeIcon
+                                            icon={faEnvelope}
+                                            className={cx('Contact__main-content__link-icon')}
+                                        />
                                         <span className={cx('main-content-text')}>doanhtuan3536@gmail.com</span>
                                     </li>
                                     <li className={cx('Contact__main-content__link')}>
-                                        <FontAwesomeIcon icon={faPhone} />
+                                        <FontAwesomeIcon
+                                            icon={faPhone}
+                                            className={cx('Contact__main-content__link-icon')}
+                                        />
                                         <span className={cx('main-content-text')}>081313xxxx</span>
                                     </li>
                                 </ul>
                             </main>
                         </div>
                     </div>
-                    <footer className={cx('footer__footer')}>Designed By Jigar Sable</footer>
+                    <hr
+                        style={{
+                            display: 'block',
+                            height: '1px',
+                            border: 0,
+                            borderTop: '1px solid grey',
+                            marginTop: '2.5rem',
+                        }}
+                    />
+                    <footer className={cx('footer__footer')}>Designed By Tuan Do</footer>
                 </footer>
             </div>
         </div>

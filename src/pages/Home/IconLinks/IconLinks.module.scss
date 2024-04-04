@@ -5,13 +5,14 @@
     // bottom: ;
     flex-direction: column;
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 40px;
     transform: translate(-50%, -50%);
     // animation: slidein 1s forwards;
     align-items: center;
     justify-content: center;
     gap: 40px;
+    // background-color: transparent;
     // transition: all 0.75s;
     // opacity: 1;
 }
@@ -30,4 +31,8 @@
     &:hover {
         transform: scale(1.5);
     }
+}
+
+.BackGround-Link {
+    background-color: transparent;
 }
